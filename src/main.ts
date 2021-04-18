@@ -5,7 +5,7 @@ import MapView from '@arcgis/core/views/MapView'
 import Search from '@arcgis/core/widgets/Search'
 import './style.css'
 
-esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY
+esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 
 const map = new ArcMap({
   basemap: 'arcgis-topographic',
