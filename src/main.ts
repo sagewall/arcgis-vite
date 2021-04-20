@@ -2,9 +2,9 @@ import '@arcgis/core/assets/esri/themes/dark/main.css'
 import esriConfig from '@arcgis/core/config'
 import ArcMap from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
+import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import Expand from '@arcgis/core/widgets/Expand'
 import Search from '@arcgis/core/widgets/Search'
-import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
@@ -20,15 +20,15 @@ const view = new MapView({
   container: 'viewDiv',
 })
 
-const searchWidget = new Search({
+const search = new Search({
   view,
 })
 
 const searchExpand = new Expand({
-  expandIconClass: 'esri-icon-search',
-  view,
+  content: search,
+  expandTooltip: 'Search',
   group: 'top-right',
-  content: searchWidget,
+  view,
 })
 
 view.ui.add(searchExpand, {
@@ -40,10 +40,10 @@ const basemapGallery = new BasemapGallery({
 })
 
 const basemapGalleryExpand = new Expand({
-  expandIconClass: 'esri-icon-basemap',
-  view,
-  group: 'top-right',
   content: basemapGallery,
+  expandTooltip: 'Choose basemap',
+  group: 'top-right',
+  view,
 })
 
 view.ui.add(basemapGalleryExpand, {
