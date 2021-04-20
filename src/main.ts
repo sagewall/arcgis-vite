@@ -4,6 +4,7 @@ import ArcMap from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
 import Expand from '@arcgis/core/widgets/Expand'
 import Search from '@arcgis/core/widgets/Search'
+import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
@@ -20,16 +21,31 @@ const view = new MapView({
 })
 
 const searchWidget = new Search({
-  container: document.createElement('div'),
   view,
 })
 
 const searchExpand = new Expand({
   expandIconClass: 'esri-icon-search',
   view,
+  group: 'top-right',
   content: searchWidget,
 })
 
 view.ui.add(searchExpand, {
+  position: 'top-right',
+})
+
+const basemapGallery = new BasemapGallery({
+  view,
+})
+
+const basemapGalleryExpand = new Expand({
+  expandIconClass: 'esri-icon-basemap',
+  view,
+  group: 'top-right',
+  content: basemapGallery,
+})
+
+view.ui.add(basemapGalleryExpand, {
   position: 'top-right',
 })
