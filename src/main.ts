@@ -1,7 +1,7 @@
 import '@arcgis/core/assets/esri/themes/dark/main.css'
 import esriConfig from '@arcgis/core/config'
-import ArcMap from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
+import WebMap from '@arcgis/core/WebMap'
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import Expand from '@arcgis/core/widgets/Expand'
 import Search from '@arcgis/core/widgets/Search'
@@ -9,8 +9,10 @@ import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 
-const map = new ArcMap({
-  basemap: 'arcgis-topographic',
+const map = new WebMap({
+  portalItem: {
+    id: 'a08efb8776f04db48982bf2332c1086b',
+  },
 })
 
 const view = new MapView({
