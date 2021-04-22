@@ -60,7 +60,7 @@ const basemapGallery = new BasemapGallery({
 
 const basemapGalleryExpand = new Expand({
   content: basemapGallery,
-  expandTooltip: 'Choose basemap',
+  expandTooltip: 'Basemap gallery',
   group: 'top-right',
   view,
 })
