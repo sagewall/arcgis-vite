@@ -5,6 +5,7 @@ import WebMap from '@arcgis/core/WebMap'
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
+import LayerList from '@arcgis/core/widgets/LayerList'
 import Search from '@arcgis/core/widgets/Search'
 import './style.css'
 
@@ -35,6 +36,21 @@ const searchExpand = new Expand({
 })
 
 view.ui.add(searchExpand, {
+  position: 'top-right',
+})
+
+const layerList = new LayerList({
+  view,
+})
+
+const layerListExpand = new Expand({
+  content: layerList,
+  expandTooltip: 'Layer list',
+  group: 'top-right',
+  view,
+})
+
+view.ui.add(layerListExpand, {
   position: 'top-right',
 })
 
