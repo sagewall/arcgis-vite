@@ -3,6 +3,7 @@ import esriConfig from '@arcgis/core/config'
 import MapView from '@arcgis/core/views/MapView'
 import WebMap from '@arcgis/core/WebMap'
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
+import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
 import Search from '@arcgis/core/widgets/Search'
 import './style.css'
@@ -49,5 +50,20 @@ const basemapGalleryExpand = new Expand({
 })
 
 view.ui.add(basemapGalleryExpand, {
+  position: 'top-right',
+})
+
+const basemapLayerList = new BasemapLayerList({
+  view,
+})
+
+const basemapLayerListExpand = new Expand({
+  content: basemapLayerList,
+  expandTooltip: 'Basemap layer list',
+  group: 'top-right',
+  view,
+})
+
+view.ui.add(basemapLayerListExpand, {
   position: 'top-right',
 })
