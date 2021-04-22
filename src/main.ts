@@ -1,4 +1,4 @@
-import '@arcgis/core/assets/esri/themes/dark/main.css'
+import '@arcgis/core/assets/esri/themes/light/main.css'
 import esriConfig from '@arcgis/core/config'
 import MapView from '@arcgis/core/views/MapView'
 import WebMap from '@arcgis/core/WebMap'
