@@ -22,6 +22,6 @@
     "vite": "^2.1.5"
   },
   "dependencies": {
-    "@arcgis/core": "^4.19.0-next.20210407"
+    "@arcgis/core": "^4.19.1"
   }
 }
