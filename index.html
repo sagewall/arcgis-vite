@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>ArcGIS Vite</title>
   </head>
   <body>
-    <div id="viewDiv"></div>
+    <calcite-shell theme="dark">
+      <div slot="shell-header">
+        <header>
+          <h1 class="title">ArcGIS Vite</h1>
+        </header>
+      </div>
+
+      <div id="viewDiv"></div>
+
+      <footer slot="shell-footer">
+        Copyright &copy; 2021 Sage Wall. All Rights Reserved.
+      </footer>
+    </calcite-shell>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

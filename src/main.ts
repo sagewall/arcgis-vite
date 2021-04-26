@@ -1,4 +1,4 @@
-import '@arcgis/core/assets/esri/themes/light/main.css'
+import '@arcgis/core/assets/esri/themes/dark/main.css'
 import esriConfig from '@arcgis/core/config'
 import MapView from '@arcgis/core/views/MapView'
 import WebMap from '@arcgis/core/WebMap'
@@ -7,9 +7,17 @@ import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import Search from '@arcgis/core/widgets/Search'
+import '@esri/calcite-components/dist/calcite/calcite.css'
+import {
+  defineCustomElements,
+  setAssetPath,
+} from '@esri/calcite-components/dist/custom-elements'
 import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
+
+setAssetPath('https://jsdev.arcgis.com/calcite-components/1.0.0-beta.54/assets')
+defineCustomElements()
 
 const map = new WebMap({
   portalItem: {
