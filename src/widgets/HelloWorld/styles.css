@@ -1,0 +1,9 @@
+.esri-hello-world {
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+.esri-hello-world--emphasis {
+  font-weight: bold;
+}

@@ -11,7 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "jsx": "react",
+    "jsxFactory": "tsx",
+    "experimentalDecorators": true
   },
   "include": ["./*.d.ts", "./src"]
 }
