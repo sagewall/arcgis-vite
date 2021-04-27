@@ -1,4 +1,3 @@
-import '@arcgis/core/assets/esri/themes/dark/main.css'
 import esriConfig from '@arcgis/core/config'
 import MapView from '@arcgis/core/views/MapView'
 import WebMap from '@arcgis/core/WebMap'
@@ -20,6 +19,34 @@ esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 
 setAssetPath('https://jsdev.arcgis.com/calcite-components/1.0.0-beta.54/assets')
 defineCustomElements()
+
+const changeTheme = (theme: string) => {
+  const url = `https://js.arcgis.com/4.19/esri/themes/${theme}/main.css`
+  document.getElementById('theme').setAttribute('href', url)
+  document.getElementById('calcite-app-shell').setAttribute('theme', theme)
+  document.getElementById('theme-switch-label').innerHTML = `${theme} theme`
+}
+
+const themeSwitch = document.getElementById(
+  'theme-switch'
+) as HTMLCalciteSwitchElement
+
+let theme = localStorage.getItem('theme')
+if (!theme) {
+  theme = 'dark'
+}
+if (theme === 'dark') {
+  themeSwitch.switched = true
+} else {
+  themeSwitch.switched = false
+}
+changeTheme(theme)
+
+themeSwitch.addEventListener('calciteSwitchChange', (e) => {
+  const theme = (<CustomEvent>e).detail.switched ? 'dark' : 'light'
+  localStorage.setItem('theme', theme)
+  changeTheme(theme)
+})
 
 const map = new WebMap({
   portalItem: {

@@ -5,15 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArcGIS Vite</title>
+    <link
+      id="theme"
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.19/esri/themes/dark/main.css"
+    />
   </head>
   <body>
-    <calcite-shell theme="dark">
+    <calcite-shell id="calcite-app-shell" theme="dark">
       <div slot="shell-header">
         <header>
           <h1 class="title">ArcGIS Vite</h1>
+          <div id="theme-switch-container">
+            <label id="theme-switch-label" for="theme-switch">Dark Theme</label>
+            <calcite-switch id="theme-switch"></calcite-switch>
+          </div>
         </header>
       </div>
-
       <div id="viewDiv"></div>
 
       <footer slot="shell-footer">

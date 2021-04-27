@@ -10,3 +10,15 @@ body,
 h1.title {
   padding-left: 1em;
 }
+
+#theme-switch-container {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 1em;
+}
+
+#theme-switch-label {
+  padding-right: 0.5em;
+  text-transform: capitalize;
+}
