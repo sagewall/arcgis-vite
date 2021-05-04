@@ -138,3 +138,15 @@ const helloWorldExpand = new Expand({
 view.ui.add(helloWorldExpand, {
   position: 'top-right',
 })
+
+// For debugging
+declare global {
+  interface Window {
+    map: WebMap
+    view: MapView
+    helloWorld: HelloWorld
+  }
+}
+window.map = map
+window.view = view
+window.helloWorld = helloWorld
