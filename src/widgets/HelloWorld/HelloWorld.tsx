@@ -2,36 +2,40 @@
 /** @jsx tsx */
 
 import {
+  aliasOf,
   property,
   subclass,
 } from '@arcgis/core/core/accessorSupport/decorators'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { tsx } from '@arcgis/core/widgets/support/widget'
 import Widget from '@arcgis/core/widgets/Widget'
+import { HelloWorldViewModel } from './HelloWorldViewModel'
+import type { HelloWorldProperties } from './types'
 
 const CSS = {
   base: 'esri-hello-world',
   emphasis: 'esri-hello-world--emphasis',
 }
 
-@subclass('esri.widgets.HelloWorld')
+@subclass('HelloWorld')
 export class HelloWorld extends Widget {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(params?: unknown) {
+  constructor(params?: HelloWorldProperties) {
     super(params)
   }
 
   @property()
+  viewModel: HelloWorldViewModel = new HelloWorldViewModel()
+
+  @aliasOf('viewModel.firstName')
   firstName = 'John'
 
-  @property()
+  @aliasOf('viewModel.lastName')
   lastName = 'Smith'
 
   @property()
   emphasized = false
 
-  render(): unknown {
-    const greeting = this._getGreeting()
+  render(): tsx.JSX.Element {
+    const greeting = this.viewModel.greeting
     const classes = {
       [CSS.emphasis]: this.emphasized,
     }
@@ -43,9 +47,5 @@ export class HelloWorld extends Widget {
         <div slot="footer">A custom widget...</div>
       </calcite-panel>
     )
-  }
-
-  private _getGreeting(): string {
-    return `My name is ${this.firstName} ${this.lastName}`
   }
 }
