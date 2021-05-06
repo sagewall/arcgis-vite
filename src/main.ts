@@ -16,12 +16,14 @@ import { HelloWorld } from './widgets/HelloWorld/HelloWorld'
 import './widgets/HelloWorld/styles.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
+esriConfig.assetsPath =
+  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.19.3/assets'
 
 setAssetPath('https://jsdev.arcgis.com/calcite-components/1.0.0-beta.54/assets')
 defineCustomElements()
 
 const changeTheme = (theme: string) => {
-  const url = `https://js.arcgis.com/4.19/esri/themes/${theme}/main.css`
+  const url = `${esriConfig.assetsPath}/esri/themes/${theme}/main.css`
   document.getElementById('theme').setAttribute('href', url)
   document.getElementById('calcite-app-shell').setAttribute('theme', theme)
   document.getElementById('theme-switch-label').innerHTML = `${theme} theme`
