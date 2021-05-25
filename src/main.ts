@@ -11,8 +11,6 @@ import {
   setAssetPath,
 } from '@esri/calcite-components/dist/custom-elements'
 import './style.css'
-import { HelloWorld } from './widgets/HelloWorld/HelloWorld'
-import './widgets/HelloWorld/styles.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
@@ -124,32 +122,12 @@ view.ui.add(basemapLayerListExpand, {
   position: 'top-right',
 })
 
-const helloWorld = new HelloWorld({
-  firstName: 'Sage',
-  lastName: 'Wall',
-  emphasized: true,
-})
-
-const helloWorldExpand = new Expand({
-  content: helloWorld,
-  expandIconClass: 'esri-icon-comment',
-  expandTooltip: 'Hello World!',
-  group: 'top-right',
-  view,
-})
-
-view.ui.add(helloWorldExpand, {
-  position: 'top-right',
-})
-
 // For debugging
 declare global {
   interface Window {
     map: WebMap
     view: MapView
-    helloWorld: HelloWorld
   }
 }
 window.map = map
 window.view = view
-window.helloWorld = helloWorld
