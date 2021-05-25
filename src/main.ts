@@ -6,7 +6,6 @@ import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import Search from '@arcgis/core/widgets/Search'
-import '@esri/calcite-components/dist/calcite/calcite.css'
 import {
   defineCustomElements,
   setAssetPath,
@@ -19,7 +18,9 @@ esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
   'https://cdn.jsdelivr.net/npm/@arcgis/core@4.19.3/assets'
 
-setAssetPath('https://jsdev.arcgis.com/calcite-components/1.0.0-beta.54/assets')
+setAssetPath(
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.54/dist/calcite/assets'
+)
 defineCustomElements()
 
 const changeTheme = (theme: string) => {
