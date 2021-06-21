@@ -11,6 +11,8 @@ import {
   setAssetPath,
 } from '@esri/calcite-components/dist/custom-elements'
 import './style.css'
+import Sketch from '@arcgis/core/widgets/Sketch'
+import GraphicsLayer from '@arcgis/core/layers/GraphicsLayer'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
@@ -119,6 +121,25 @@ const basemapLayerListExpand = new Expand({
 })
 
 view.ui.add(basemapLayerListExpand, {
+  position: 'top-right',
+})
+
+const sketchGraphicsLayer = new GraphicsLayer()
+map.add(sketchGraphicsLayer)
+
+const sketch = new Sketch({
+  layer: sketchGraphicsLayer,
+  view,
+})
+
+const sketchExpand = new Expand({
+  content: sketch,
+  expandTooltip: 'Sketch',
+  group: 'top-right',
+  view,
+})
+
+view.ui.add(sketchExpand, {
   position: 'top-right',
 })
 
