@@ -19,14 +19,24 @@ esriConfig.assetsPath =
   'https://cdn.jsdelivr.net/npm/@arcgis/core@4.19.3/assets'
 
 setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.57/dist/calcite/assets'
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.58/dist/calcite/assets'
 )
 defineCustomElements()
 
 const changeTheme = (theme: string) => {
   const url = `${esriConfig.assetsPath}/esri/themes/${theme}/main.css`
   document.getElementById('theme').setAttribute('href', url)
-  document.getElementById('calcite-app-shell').setAttribute('theme', theme)
+  if (theme === 'dark') {
+    document
+      .getElementById('calcite-app-shell')
+      .classList.replace('calcite-theme-light', 'calcite-theme-dark')
+  }
+  if (theme === 'light') {
+    document
+      .getElementById('calcite-app-shell')
+      .classList.replace('calcite-theme-dark', 'calcite-theme-light')
+  }
+
   document.getElementById('theme-switch-label').innerHTML = `${theme} theme`
 }
 
