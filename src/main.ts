@@ -135,6 +135,7 @@ view.ui.add(basemapLayerListExpand, {
 })
 
 const sketchGraphicsLayer = new GraphicsLayer()
+sketchGraphicsLayer.title = 'Sketch Graphics'
 map.add(sketchGraphicsLayer)
 
 const sketch = new Sketch({
