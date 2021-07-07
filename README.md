@@ -1,5 +1,9 @@
 # ArcGIS Vite
 
+## Environment Variables
+
+VITE_ARCGIS_API_KEY="< Valid ArcGIS API Key >"
+
 ## NPM Scripts
 
 **Start development server**
