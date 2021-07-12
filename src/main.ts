@@ -16,10 +16,10 @@ import GraphicsLayer from '@arcgis/core/layers/GraphicsLayer'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
-  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.20.1/assets'
+  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.20.2/assets'
 
 setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.58/dist/calcite/assets'
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.59/dist/calcite/assets'
 )
 defineCustomElements()
 
