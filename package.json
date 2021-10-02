@@ -8,21 +8,21 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
-    "prettier": "2.3.2",
-    "typescript": "^4.3.5",
-    "vite": "^2.4.4"
+    "prettier": "2.4.1",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.2"
   },
   "dependencies": {
-    "@arcgis/core": "^4.20.2",
-    "@esri/calcite-components": "^1.0.0-beta.61"
+    "@arcgis/core": "^4.21.2",
+    "@esri/calcite-components": "^1.0.0-beta.66"
   }
 }
