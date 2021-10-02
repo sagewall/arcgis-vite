@@ -17,15 +17,19 @@
   </head>
   <body>
     <calcite-shell id="calcite-app-shell" class="calcite-theme-dark">
-      <div slot="header">
-        <header>
+      <header slot="header">
+        <div class="header-left">
           <h1 class="title">ArcGIS Vite</h1>
+        </div>
+        <div class="header-right">
           <div id="theme-switch-container">
             <label id="theme-switch-label" for="theme-switch">Dark Theme</label>
             <calcite-switch id="theme-switch"></calcite-switch>
           </div>
-        </header>
-      </div>
+          <calcite-button id="signInButton"></calcite-button>
+        </div>
+      </header>
+
       <div id="viewDiv"></div>
 
       <footer slot="footer">

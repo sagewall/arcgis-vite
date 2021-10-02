@@ -1,4 +1,7 @@
 import esriConfig from '@arcgis/core/config'
+import esriId from '@arcgis/core/identity/IdentityManager'
+import OAuthInfo from '@arcgis/core/identity/OAuthInfo'
+import GraphicsLayer from '@arcgis/core/layers/GraphicsLayer'
 import MapView from '@arcgis/core/views/MapView'
 import WebMap from '@arcgis/core/WebMap'
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
@@ -6,13 +9,12 @@ import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
 import LayerList from '@arcgis/core/widgets/LayerList'
 import Search from '@arcgis/core/widgets/Search'
+import Sketch from '@arcgis/core/widgets/Sketch'
 import {
   defineCustomElements,
   setAssetPath,
 } from '@esri/calcite-components/dist/custom-elements'
 import './style.css'
-import Sketch from '@arcgis/core/widgets/Sketch'
-import GraphicsLayer from '@arcgis/core/layers/GraphicsLayer'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
@@ -22,6 +24,43 @@ setAssetPath(
   'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.66/dist/calcite/assets'
 )
 defineCustomElements()
+
+const info = new OAuthInfo({
+  appId: import.meta.env.VITE_ARCGIS_CLIENT_ID as string,
+  popup: false,
+})
+esriId.registerOAuthInfos([info])
+
+const signInButton = document.getElementById(
+  'signInButton'
+) as HTMLCalciteButtonElement
+
+esriId
+  .checkSignInStatus(info.portalUrl + '/sharing')
+  .then(() => {
+    signInButton.textContent = 'Sign Out'
+  })
+  .catch(() => {
+    signInButton.textContent = 'Sign In'
+  })
+
+signInButton.addEventListener('click', () => {
+  signIn()
+})
+
+const signIn = () => {
+  console.log('sign in clicked')
+  esriId
+    .checkSignInStatus(info.portalUrl + '/sharing')
+    .then(() => {
+      esriId.destroyCredentials()
+      window.location.reload()
+    })
+    .catch(() => {
+      esriId.getCredential(info.portalUrl + '/sharing')
+      signInButton.textContent = 'Sign Out'
+    })
+}
 
 const changeTheme = (theme: string) => {
   const url = `${esriConfig.assetsPath}/esri/themes/${theme}/main.css`

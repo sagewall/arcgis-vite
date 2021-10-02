@@ -7,15 +7,18 @@ body,
   width: 100%;
 }
 
-h1.title {
-  padding-left: 1em;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
 }
 
-#theme-switch-container {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  padding: 1em;
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 #theme-switch-label {
