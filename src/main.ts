@@ -76,7 +76,7 @@ const changeTheme = (theme: string) => {
       .classList.replace('calcite-theme-dark', 'calcite-theme-light')
   }
 
-  document.getElementById('theme-switch-label').innerHTML = `${theme} theme`
+  document.getElementById('theme-switch-label').textContent = `${theme} theme`
 }
 
 const themeSwitch = document.getElementById(
