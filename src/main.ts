@@ -15,6 +15,7 @@ import {
   setAssetPath,
 } from '@esri/calcite-components/dist/custom-elements'
 import './style.css'
+import Print from '@arcgis/core/widgets/Print'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
@@ -190,6 +191,23 @@ const sketchExpand = new Expand({
 })
 
 view.ui.add(sketchExpand, {
+  position: 'top-right',
+})
+
+const print = new Print({
+  printServiceUrl:
+    'https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task',
+  view,
+})
+
+const printExpand = new Expand({
+  content: print,
+  expandTooltip: 'Print',
+  group: 'top-right',
+  view,
+})
+
+view.ui.add(printExpand, {
   position: 'top-right',
 })
 
