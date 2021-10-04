@@ -63,37 +63,47 @@ const signIn = () => {
     })
 }
 
-const changeTheme = (theme: string) => {
-  const url = `${esriConfig.assetsPath}/esri/themes/${theme}/main.css`
-  document.getElementById('theme').setAttribute('href', url)
-  if (theme === 'dark') {
-    document
-      .getElementById('calcite-app-shell')
-      .classList.replace('calcite-theme-light', 'calcite-theme-dark')
+const theme = document.getElementById('theme') as HTMLElement
+const calciteAppShell = document.getElementById(
+  'calcite-app-shell'
+) as HTMLElement
+const themeSwitchLabel = document.getElementById(
+  'theme-switch-label'
+) as HTMLElement
+
+const changeTheme = (localStorageTheme: string) => {
+  const url = `${esriConfig.assetsPath}/esri/themes/${localStorageTheme}/main.css`
+  theme.setAttribute('href', url)
+  if (localStorageTheme === 'dark') {
+    calciteAppShell.classList.replace(
+      'calcite-theme-light',
+      'calcite-theme-dark'
+    )
   }
-  if (theme === 'light') {
-    document
-      .getElementById('calcite-app-shell')
-      .classList.replace('calcite-theme-dark', 'calcite-theme-light')
+  if (localStorageTheme === 'light') {
+    calciteAppShell.classList.replace(
+      'calcite-theme-dark',
+      'calcite-theme-light'
+    )
   }
 
-  document.getElementById('theme-switch-label').textContent = `${theme} theme`
+  themeSwitchLabel.textContent = `${localStorageTheme} theme`
 }
 
 const themeSwitch = document.getElementById(
   'theme-switch'
 ) as HTMLCalciteSwitchElement
 
-let theme = localStorage.getItem('theme')
-if (!theme) {
-  theme = 'dark'
+let localStorageTheme = localStorage.getItem('theme')
+if (!localStorageTheme) {
+  localStorageTheme = 'dark'
 }
-if (theme === 'dark') {
+if (localStorageTheme === 'dark') {
   themeSwitch.switched = true
 } else {
   themeSwitch.switched = false
 }
-changeTheme(theme)
+changeTheme(localStorageTheme)
 
 themeSwitch.addEventListener('calciteSwitchChange', (e) => {
   const theme = (<CustomEvent>e).detail.switched ? 'dark' : 'light'
