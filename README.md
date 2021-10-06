@@ -3,7 +3,6 @@
 ## Environment Variables
 
 VITE_ARCGIS_API_KEY="< Valid ArcGIS API Key >"
-VITE_ARCGIS_CLIENT_ID="< Valid ArcGIS OAuth 2.0 Client ID >"
 
 ## NPM Scripts
 
