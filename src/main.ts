@@ -20,7 +20,7 @@ esriConfig.assetsPath =
   'https://cdn.jsdelivr.net/npm/@arcgis/core@4.21.2/assets'
 
 setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.66/dist/calcite/assets'
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.67/dist/calcite/assets'
 )
 defineCustomElements()
 
@@ -60,9 +60,9 @@ if (!localStorageTheme) {
   localStorageTheme = 'dark'
 }
 if (localStorageTheme === 'dark') {
-  themeSwitch.switched = true
+  themeSwitch.checked = true
 } else {
-  themeSwitch.switched = false
+  themeSwitch.checked = false
 }
 changeTheme(localStorageTheme)
 
