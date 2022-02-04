@@ -20,7 +20,7 @@ esriConfig.assetsPath =
   'https://cdn.jsdelivr.net/npm/@arcgis/core@4.22.2/assets'
 
 setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.75/dist/calcite/assets'
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.76/dist/calcite/assets'
 )
 defineCustomElements()
 
