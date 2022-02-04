@@ -166,8 +166,6 @@ view.ui.add(sketchExpand, {
 })
 
 const print = new Print({
-  printServiceUrl:
-    'https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task',
   view,
 })
 
