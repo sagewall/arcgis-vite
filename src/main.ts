@@ -17,10 +17,10 @@ import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
-  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.22.2/assets'
+  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.23.7/assets'
 
 setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.76/dist/calcite/assets'
+  'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.80/dist/calcite/assets'
 )
 defineCustomElements()
 
