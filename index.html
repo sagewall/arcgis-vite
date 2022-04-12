@@ -23,8 +23,11 @@
         </div>
         <div class="header-right">
           <div id="theme-switch-container">
-            <label id="theme-switch-label" for="theme-switch">Dark Theme</label>
-            <calcite-switch id="theme-switch"></calcite-switch>
+            <calcite-label disable-spacing layout="inline">
+              <calcite-icon icon="brightness" scale="s" class="theme-icon"></calcite-icon>
+              <calcite-switch id="theme-switch"></calcite-switch>
+              <calcite-icon icon="moon" scale="s" class="theme-icon"></calcite-icon>
+            </calcite-label>
           </div>
         </div>
       </header>

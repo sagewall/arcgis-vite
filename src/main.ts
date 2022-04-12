@@ -28,9 +28,6 @@ const theme = document.getElementById('theme') as HTMLElement
 const calciteAppShell = document.getElementById(
   'calcite-app-shell'
 ) as HTMLElement
-const themeSwitchLabel = document.getElementById(
-  'theme-switch-label'
-) as HTMLElement
 
 const changeTheme = (localStorageTheme: string) => {
   const url = `${esriConfig.assetsPath}/esri/themes/${localStorageTheme}/main.css`
@@ -47,8 +44,6 @@ const changeTheme = (localStorageTheme: string) => {
       'calcite-theme-light'
     )
   }
-
-  themeSwitchLabel.textContent = `${localStorageTheme} theme`
 }
 
 const themeSwitch = document.getElementById(

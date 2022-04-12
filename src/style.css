@@ -21,7 +21,17 @@ header {
   gap: 1em;
 }
 
-#theme-switch-label {
-  padding-right: 0.5em;
-  text-transform: capitalize;
+#theme-switch-container {
+  position: absolute;
+  right: 0;
+  margin: 1em;
+  z-index: 2;
+  border: 1px solid;
+  border-color: var(--calcite-ui-border-1);
+  background-color: var(--calcite-ui-foreground-1);
+}
+
+.theme-icon {
+  padding: .5em;
+  cursor: pointer;
 }
