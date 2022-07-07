@@ -17,7 +17,7 @@ import './style.css'
 
 esriConfig.apiKey = import.meta.env.VITE_ARCGIS_API_KEY as string
 esriConfig.assetsPath =
-  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.23.7/assets'
+  'https://cdn.jsdelivr.net/npm/@arcgis/core@4.24.6/assets'
 
 setAssetPath(
   'https://cdn.jsdelivr.net/npm/@esri/calcite-components@1.0.0-beta.83/dist/calcite/assets'
