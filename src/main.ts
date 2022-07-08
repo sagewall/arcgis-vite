@@ -6,6 +6,7 @@ import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import BasemapLayerList from '@arcgis/core/widgets/BasemapLayerList'
 import Expand from '@arcgis/core/widgets/Expand'
 import LayerList from '@arcgis/core/widgets/LayerList'
+import Legend from '@arcgis/core/widgets/Legend'
 import Print from '@arcgis/core/widgets/Print'
 import Search from '@arcgis/core/widgets/Search'
 import Sketch from '@arcgis/core/widgets/Sketch'
@@ -105,6 +106,21 @@ const layerListExpand = new Expand({
 })
 
 view.ui.add(layerListExpand, {
+  position: 'top-right',
+})
+
+const legend = new Legend({
+  view,
+})
+
+const legendExpand = new Expand({
+  content: legend,
+  expandTooltip: 'Legend',
+  group: 'top-right',
+  view,
+})
+
+view.ui.add(legendExpand, {
   position: 'top-right',
 })
 
