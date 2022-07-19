@@ -1,4 +1,4 @@
-# ArcGIS Vite
+# sagemaps-vite
 
 ## Environment Variables
 
